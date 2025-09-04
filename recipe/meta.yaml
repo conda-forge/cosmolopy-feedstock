@@ -25,10 +25,10 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - numpy
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - scipy >=1.0
 
 test:
