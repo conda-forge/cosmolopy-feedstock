@@ -10,9 +10,11 @@ source:
   sha256: e420475419a1cde65a93d38036470d89cf1540ff54a2f0b44ccb85bff2316e16
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
   number: 3
   skip: True  # [win]
+  script: 
+    - export CFLAGS="${CFLAGS} -Wno-implicit-function-declaration"
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
